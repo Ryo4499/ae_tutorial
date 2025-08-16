@@ -1,0 +1,15 @@
+name: LGTM on PR Approval
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  lgtm:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post LGTM Image
+        uses: Ryo4499/lgtm-action@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

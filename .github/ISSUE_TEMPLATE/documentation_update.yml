@@ -1,0 +1,57 @@
+name: Documentation Update
+description: Suggest improvements or additions to documentation
+title: "[DOCS] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve our documentation!
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: Documentation Type
+      description: What type of documentation needs updating?
+      options:
+        - API Reference
+        - User Guide
+        - Tutorial
+        - README
+        - Code Comments
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Documentation Location
+      description: Where is the documentation that needs to be updated?
+      placeholder: URL or file path
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Content
+      description: What does the documentation currently say?
+    validations:
+      required: true
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Suggested Update
+      description: What should the documentation say instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Update
+      description: Why should this documentation be updated?
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Any other context or screenshots about the documentation update

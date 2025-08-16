@@ -1,0 +1,3 @@
+[submodule "setup_vim"]
+	path = setup_vim
+	url = git@github.com:ryo-arai-dev/setup_vim.git

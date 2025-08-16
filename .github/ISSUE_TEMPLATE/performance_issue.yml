@@ -1,0 +1,76 @@
+name: Performance Issue
+description: Report a performance problem or bottleneck
+title: "[PERF] "
+labels: ["performance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a performance issue!
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the performance issue
+      description: A clear and concise description of what the performance problem is
+      placeholder: The application becomes unresponsive when...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the performance issue
+      placeholder: |
+        1. Go to '...'
+        2. Perform action '....'
+        3. Observe slow performance
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected performance
+      description: A clear description of what performance you would expect
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequency
+      description: How often does this performance issue occur?
+      options:
+        - Always
+        - Frequently
+        - Sometimes
+        - Rarely
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How severe is this performance issue?
+      options:
+        - Critical (system unusable)
+        - High (major functionality impacted)
+        - Medium (partial functionality impacted)
+        - Low (minimal impact)
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Performance Metrics
+      description: If available, provide metrics, profiling data, or benchmarks
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Details
+      description: System specifications, hardware, etc.
+      placeholder: |
+        - OS: [e.g. Windows 10]
+        - CPU: [e.g. Intel i7-9700K]
+        - RAM: [e.g. 16GB]
+        - Browser/Version: [if applicable]
+    validations:
+      required: true
