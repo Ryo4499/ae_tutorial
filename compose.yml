@@ -9,8 +9,8 @@ x-bind_mount: &bind_mount
       source: .
       target: /root/app
     - type: bind
-      source: /run/user/1000/wayland-1
-      target: /tmp/wayland-1
+      source: $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY
+      target: /tmp/$WAYLAND_DISPLAY
   working_dir: /root/app
   platform: linux/amd64
 services:
