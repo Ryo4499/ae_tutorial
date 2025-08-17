@@ -5,7 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "Ryo Arai", email = "ryo.p4499@gmail.com" }]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "lightning>=2.5.3",
+    "matplotlib>=3.10.5",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+]
 
 [tool.uv]
 default-groups = ["dev", "test"]

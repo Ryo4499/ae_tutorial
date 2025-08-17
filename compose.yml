@@ -8,18 +8,26 @@ x-bind_mount: &bind_mount
     - type: bind
       source: .
       target: /root/app
+    - type: bind
+      source: $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY
+      target: /tmp/$WAYLAND_DISPLAY
   working_dir: /root/app
   platform: linux/amd64
 services:
   app:
-    container_name: python_app
+    container_name: ae_tutorial
     build:
       context: .
       dockerfile: Dockerfile
       args:
         TZ: ${TZ:-Etc/UTC}
     !!merge <<: [*bind_mount, *env_tty]
+    environment:
+      XDG_RUNTIME_DIR: /tmp
+      WAYLAND_DISPLAY: $WAYLAND_DISPLAY
+      DISPLAY: :0
     entrypoint: zsh
+    network_mode: host
     deploy:
       resources:
         reservations:

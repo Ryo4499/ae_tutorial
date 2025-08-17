@@ -1,9 +1,10 @@
-FROM python:3.12-slim-bookworm
+FROM nvidia/cuda:12.9.1-cudnn-runtime-ubuntu24.04
 
 ARG TZ='Etc/UTC'
 
 ENV TZ=$TZ
 ENV UV_LINK_MODE=copy
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -18,7 +19,8 @@ RUN apt-get update && \
     openssl \
     bash \
     zsh \
-    pipx && \
+    pipx \
+    python3-tk && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     chsh -s /bin/zsh && \
