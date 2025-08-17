@@ -18,7 +18,8 @@ RUN apt-get update && \
     openssl \
     bash \
     zsh \
-    pipx && \
+    pipx \
+    python3-tk && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     chsh -s /bin/zsh && \
